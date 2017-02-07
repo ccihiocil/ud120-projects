@@ -12,18 +12,18 @@
     You fill in the regression code where indicated:
 """    
 
-
 import sys
 import pickle
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
-dictionary = pickle.load( open("../final_project/final_project_dataset_modified.pkl", "r") )
+dictionary = pickle.load( open("final_project/final_project_dataset_modified.pkl", "r") )
 
 ### list the features you want to look at--first item in the 
 ### list will be the "target" feature
 features_list = ["bonus", "salary"]
 data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
 target, features = targetFeatureSplit( data )
+
 
 ### training-testing split needed in regression, just like classification
 from sklearn.cross_validation import train_test_split
